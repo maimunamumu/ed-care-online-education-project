@@ -1,0 +1,67 @@
+[
+    {
+        "id": "1",
+        "title": "Business Management",
+        "img": "/assets/category-1.png"
+    },
+    {
+        "id": "2",
+        "title": "Art Design",
+        "img": "/assets/category-2.png"
+    },
+    {
+        "id": "3",
+        "title": "Personal Development",
+        "img": "/assets/category-3.png"
+    },
+    {
+        "id": "4",
+        "title": "Health & Fitness",
+        "img": "/assets/category-4.png"
+    },
+    {
+        "id": "5",
+        "title": "Marketing",
+        "img": "/assets/category-6.png"
+    },
+    {
+        "id": "6",
+        "title": "Business & Finance",
+        "img": "/assets/category-6.png"
+    },
+    {
+        "id": "7",
+        "title": "Computer Science",
+        "img": "/assets/category-3.png"
+    },
+    {
+        "id": "8",
+        "title": "Data Science",
+        "img": "/assets/category-2.png"
+    },
+    {
+        "id": "9",
+        "title": "Software company",
+        "img": "/assets/category-1.png"
+    },
+    {
+        "id": "10",
+        "title": "Video",
+        "img": "/assets/category-4.png"
+    },
+    {
+        "id": "11",
+        "title": "Photography",
+        "img": "/assets/category-3.png"
+    },
+    {
+        "id": "12",
+        "title": "3d Game Studio",
+        "img": "/assets/category-2.png"
+    },
+    {
+        "id": "13",
+        "title": "High Tech Company",
+        "img": "/assets/category-1.png"
+    }
+]

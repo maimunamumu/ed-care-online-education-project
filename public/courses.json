@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "React Tutorial Beginners For Skills Building Career",
+    "price": "59.00",
+    "category": "Development",
+    "lessons": 8,
+    "students": 50,
+    "views": "12K",
+    "rating": 4.7,
+    "instructor": "Kevin Perry",
+    "image": "/assets/course-img-1.png",
+    "tag": "Free"
+  },
+  {
+    "id": 2,
+    "title": "Cultural Perspectives in Teaching and Learning Environments",
+    "price": "59.00",
+    "category": "Business",
+    "lessons": 8,
+    "students": 50,
+    "views": "12K",
+    "rating": 4.7,
+    "instructor": "Daniel Ross",
+    "image": "/assets/course-img-2.png",
+    "tag": "Free"
+  },
+  {
+    "id": 3,
+    "title": "Innovative Instructional Strategies for Enhancing Students",
+    "price": "59.00",
+    "category": "Design",
+    "lessons": 8,
+    "students": 50,
+    "views": "12K",
+    "rating": 4.7,
+    "instructor": "Andrew Klip",
+    "image": "/assets/course-img-3.png",
+    "tag": "Free"
+  }
+]

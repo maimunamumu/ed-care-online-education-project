@@ -1,0 +1,107 @@
+"use client";
+import heroimg from "../../../assets/hero-img-1.png";
+import Image from "next/image";
+import { Play } from "lucide-react";
+import heroIcon from "../../../assets/hero-author-1.png";
+import heroIcon2 from "../../../assets/hero-author-2.png";
+import heroIcon3 from "../../../assets/hero-author-3.png";
+import heroIcon4 from "../../../assets/hero-author-4.png";
+import heroShape from "../../../assets/hero-shape-1 (1).png";
+
+const Hero = () => {
+  return (
+    <section className="bg-[#f2f6fa] py-10">
+      <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-16">
+
+        {/* LEFT TEXT AREA */}
+        <div className="space-y-6 w-full lg:w-1/2 text-center lg:text-left">
+
+          {/* Badge */}
+          <div className="flex items-center gap-2 bg-white shadow-sm px-4 py-2 rounded-full w-fit mx-auto lg:mx-0">
+            <span className="w-2 h-2 rounded-full bg-teal-500"></span>
+            <p className="text-gray-700 text-sm font-medium">
+              Welcome to Online Education
+            </p>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+            Start learning from <br />
+            the world’s <span className="text-teal-600">best institutions</span>
+          </h1>
+
+          {/* Buttons */}
+          <div className="flex items-center justify-center lg:justify-start gap-5 flex-wrap mt-5">
+            <button className="bg-teal-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-teal-700 transition">
+              Get Started
+            </button>
+
+            <button className="flex items-center gap-2 text-gray-700 font-medium">
+              <Play className="w-5 h-5 bg-white shadow p-1 rounded-full text-teal-600" />
+              Watch the video
+            </button>
+          </div>
+
+          {/* Enrolled Users */}
+          <div className="flex items-center justify-center lg:justify-start gap-4 my-7">
+            <div className="flex -space-x-3">
+              <Image src={heroIcon} width={40} height={40} alt="user" className="rounded-full" />
+              <Image src={heroIcon2} width={40} height={40} alt="user" className="rounded-full" />
+              <Image src={heroIcon3} width={40} height={40} alt="user" className="rounded-full" />
+              <Image src={heroIcon4} width={40} height={40} alt="user" className="rounded-full" />
+            </div>
+
+            <p className="text-gray-600 text-sm md:text-base">
+              <span className="font-bold text-gray-900">10k+</span> Enrollment
+            </p>
+          </div>
+
+          <p className="text-gray-700 text-sm md:text-base">
+            Explore <span className="text-teal-600 font-bold">1350+ Courses</span> within Subject
+          </p>
+        </div>
+
+        {/* RIGHT IMAGE SECTION */}
+        <div className="relative flex justify-center w-full lg:w-1/2">
+
+          {/* Hero Image */}
+          <div className="rounded-3xl overflow-hidden shadow-lg w-[260px] sm:w-[300px] md:w-[340px] lg:w-[400px]">
+            <Image
+              src={heroimg}
+              width={400}
+              height={400}
+              alt="Hero"
+              className="object-cover w-full h-full"
+            />
+          </div>
+
+          {/* Floating Shape */}
+          <div className="absolute -right-6 top-24 sm:top-32 md:top-40 w-[180px] sm:w-[220px] md:w-[260px]">
+            <Image src={heroShape} alt="Shape" width={260} height={260} className="object-cover" />
+          </div>
+
+          {/* Floating Card */}
+          <div className="absolute bottom-10 sm:bottom-20 md:bottom-28 -left-6 bg-white px-6 py-4 rounded-2xl shadow-lg animate-float-x">
+            <p className="text-teal-600 text-2xl font-bold">256+</p>
+            <p className="text-gray-600 text-sm -mt-1">Crashed Courses</p>
+          </div>
+<style jsx>{`
+            @keyframes floatX {
+              0% { transform: translateX(0); }
+              50% { transform: translateX(12px); }
+              100% { transform: translateX(0); }
+            }
+
+            .animate-float-x {
+              animation: floatX 3s ease-in-out infinite;
+            }
+     `}</style>
+       
+         
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
