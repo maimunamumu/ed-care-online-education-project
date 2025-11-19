@@ -1,4 +1,4 @@
-"use client";
+
 import heroimg from "../../../assets/hero-img-1.png";
 import Image from "next/image";
 import { Play } from "lucide-react";
@@ -62,7 +62,7 @@ const Hero = () => {
         </div>
 
         {/* RIGHT IMAGE SECTION */}
-        <div className="relative flex justify-center w-full lg:w-1/2">
+        <div className=" flex justify-center w-full lg:w-1/2">
 
           {/* Hero Image */}
           <div className="rounded-3xl overflow-hidden shadow-lg w-[260px] sm:w-[300px] md:w-[340px] lg:w-[400px]">
@@ -76,15 +76,19 @@ const Hero = () => {
           </div>
 
           {/* Floating Shape */}
-          <div className="absolute -right-6 top-24 sm:top-32 md:top-40 w-[180px] sm:w-[220px] md:w-[260px]">
+       <div className="relative">
+           <div className="absolute -right-20 top-30 w-[200px] lg:block hidden">
             <Image src={heroShape} alt="Shape" width={260} height={260} className="object-cover" />
           </div>
+       </div>
 
           {/* Floating Card */}
-          <div className="absolute bottom-10 sm:bottom-20 md:bottom-28 -left-6 bg-white px-6 py-4 rounded-2xl shadow-lg animate-float-x">
-            <p className="text-teal-600 text-2xl font-bold">256+</p>
-            <p className="text-gray-600 text-sm -mt-1">Crashed Courses</p>
+       <div className="relative">
+            <div className="absolute animate-float-x top-40 md:top-60 lg:right-80 bg-white shadow-lg rounded-xl  w-40  py-3 pl-6 lg:block hidden">
+            <p className="text-xl sm:text-2xl font-bold text-teal-600">256+</p>
+            <p className="text-gray-600 text-xs sm:text-sm">Crashed Courses</p>
           </div>
+</div>
 <style jsx>{`
             @keyframes floatX {
               0% { transform: translateX(0); }

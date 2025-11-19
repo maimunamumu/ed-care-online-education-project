@@ -1,9 +1,14 @@
 import React from 'react';
 
+
+import FeaturesCourses from './FeaturesCourses/FeaturesCourses';
+import Banner from '../Components/SharedFolder/Banner/Banner';
+
 const page = () => {
     return (
         <div>
-           <h1>This is Course page</h1> 
+          <Banner title={"Course Page"} p={"Course"}></Banner>
+          <FeaturesCourses></FeaturesCourses>
         </div>
     );
 };

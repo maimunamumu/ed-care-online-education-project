@@ -9,6 +9,8 @@
     "views": "12K",
     "rating": 4.7,
     "instructor": "Kevin Perry",
+    "authorName": "Kevin Perry",
+    "authorImage": "/assets/courseImg/course-author-1.png",
     "image": "/assets/course-img-1.png",
     "tag": "Free"
   },
@@ -22,6 +24,8 @@
     "views": "12K",
     "rating": 4.7,
     "instructor": "Daniel Ross",
+    "authorName": "Daniel Ross",
+    "authorImage": "/assets/courseImg/course-author-2.png",
     "image": "/assets/course-img-2.png",
     "tag": "Free"
   },
@@ -35,7 +39,54 @@
     "views": "12K",
     "rating": 4.7,
     "instructor": "Andrew Klip",
+    "authorName": "Andrew Klip",
+    "authorImage": "/assets/courseImg/course-author-3.png",
     "image": "/assets/course-img-3.png",
+    "tag": "Free"
+  },
+  {
+    "id": 4,
+    "title": "Mastering Web Design With Modern UI/UX Principles",
+    "price": "59.00",
+    "category": "Design",
+    "lessons": 8,
+    "students": 50,
+    "views": "12K",
+    "rating": 4.8,
+    "instructor": "Sophia Miller",
+    "authorName": "Sophia Miller",
+    "authorImage": "/assets/courseImg/course-author-4.png",
+    "image": "/assets/course-author-4.png",
+    "tag": "Free"
+  },
+  {
+    "id": 5,
+    "title": "Advanced JavaScript Concepts for Real-World Projects",
+    "price": "59.00",
+    "category": "Development",
+    "lessons": 8,
+    "students": 50,
+    "views": "12K",
+    "rating": 4.9,
+    "instructor": "Michael Adams",
+    "authorName": "Michael Adams",
+    "authorImage": "/assets/courseImg/course-author-5.png",
+    "image": "/assets/course-author-5.png",
+    "tag": "Free"
+  },
+  {
+    "id": 6,
+    "title": "Entrepreneurship Essentials: Building a Strong Startup",
+    "price": "59.00",
+    "category": "Business",
+    "lessons": 8,
+    "students": 50,
+    "views": "12K",
+    "rating": 4.6,
+    "instructor": "Emma Johnson",
+    "authorName": "Emma Johnson",
+    "authorImage": "/assets/courseImg/course-author-6.png",
+    "image": "/assets/course-author-6.png",
     "tag": "Free"
   }
 ]

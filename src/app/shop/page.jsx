@@ -1,9 +1,13 @@
 import React from 'react';
 
+import BooksSection from './BooksSection/BooksSection';
+import Banner from '../Components/SharedFolder/Banner/Banner';
+
 const page = () => {
     return (
         <div>
-            ths is shop page
+        <Banner title={"Product Page"} p={"Product"}></Banner>
+          <BooksSection></BooksSection>
         </div>
     );
 };

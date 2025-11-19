@@ -8,6 +8,9 @@ import Explore from "./Components/Explore/Explore";
 import FeaturesCourses from "./Components/FeaturesCourses/FeaturesCourses";
 import Parsent from "./Components/Parsent/Parsent";
 import LatestNewsSection from "./Components/LatestNewSection/LatestNewSection";
+import NewletterBanner from "./Components/NewletterBanner/NewletterBanner";
+import Instructors from "./Components/Instructors/Instructors";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 
 
@@ -20,6 +23,9 @@ export default function Home() {
  <Explore></Explore>
  <FeaturesCourses></FeaturesCourses>
  <Parsent></Parsent>
+ <Dashboard></Dashboard>
+ <Instructors></Instructors>
+ <NewletterBanner></NewletterBanner>
  <LatestNewsSection></LatestNewsSection>
       </div>
   );
