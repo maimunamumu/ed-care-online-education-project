@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 const SelectCategory = () => {
@@ -17,7 +18,7 @@ const SelectCategory = () => {
     <div className="bg-[#F2F4F7] py-14">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-10">
-          <span className="px-4 py-2 bg-white text-gray-500 shadow rounded-full text-sm">
+          <span className="px-4 py-2 bg-white text-gray-500 shadow rounded-full text-lg">
             Our Course Categories
           </span>
           <h2 className="text-3xl font-bold mt-4">
@@ -25,12 +26,13 @@ const SelectCategory = () => {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mt-8 mb-12">
+      <div className="flex flex-wrap justify-center gap-3 mt-8 mb-12">
           {categories.map((cat, i) => (
-            <button
+          
+               <button
               key={i}
               onClick={() => setActiveCategory(cat)}
-              className={`pr-5 pl-2 py-2 rounded-full text-sm border transition
+              className={`pr-5 pl-2 py-2 rounded-full text-lg border transition
                 ${
                   activeCategory === cat
                     ? "bg-teal-600 text-white border-teal-600"
@@ -48,9 +50,10 @@ const SelectCategory = () => {
                     className="shadow-lg"
                   />
                 </div>
-                {cat.title}
+             <Link href={`/${cat.id}`}>   {cat.title}</Link>
               </div>
             </button>
+         
           ))}
         </div>
       </div>

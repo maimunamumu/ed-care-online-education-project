@@ -62,7 +62,7 @@ const FeaturesCourseCard = ({ course }) => {
             <span className="font-bold">${course.price}</span>
 
             <Link href={`/${course.id}`}>
-              <button className="px-4 py-2 border border-gray-200 text-sm rounded-full hover:bg-gray-100 transition">
+              <button className="px-4 py-2 border border-gray-300 text-lg font-semibold rounded-full hover:bg-gray-100 transition">
                 View Details
               </button>
             </Link>

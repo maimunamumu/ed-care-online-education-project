@@ -13,10 +13,10 @@ const Page = () => {
       .then((data) => setCourses(data));
   }, []);
 
-  const course = courses.find((c) => c.id == id);
+  const c = courses.find((c) => c.id == id);
 
   // ⛔ FIX: course still loading
-  if (!course) {
+  if (!c) {
     return (
       <div className="container mx-auto px-12 py-20">
         <p className="text-xl font-semibold">Loading course...</p>
@@ -25,47 +25,162 @@ const Page = () => {
   }
 
   return (
-    <div className="container mx-auto px-12 py-20">
-      <div className="flex flex-col md:flex-row gap-6">
-        {/* Image */}
-        <div className="md:w-1/3">
-          <Image
-            src={course.image}
-            alt={course.title}
-            className="rounded-lg shadow-md"
-            width={400}
-            height={300}
-          />
+   <div className="container mx-auto px-5 lg:px-20 py-14">
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+        {/* LEFT COLUMN */}
+        <div className="lg:col-span-2 border border-gray-200 p-5 rounded-lg">
+
+          {/* IMAGE */}
+          <div className="rounded-xl overflow-hidden shadow">
+            <Image
+              src={c.image}
+              width={1000}
+              height={500}
+              className="rounded-xl w-full object-cover"
+              alt={c.title}
+            />
+          </div>
+
+          {/* Badges */}
+          <div className="flex gap-3 mt-5">
+            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-teal-100 text-teal-700">
+              Best Seller
+            </span>
+            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-700">
+              Latest
+            </span>
+          </div>
+
+          {/* TITLE */}
+          <h1 className="text-3xl font-bold mt-4 leading-snug">{c.title}</h1>
+
+          {/* META INFO */}
+          <div className="flex flex-wrap items-center gap-6 mt-4 text-gray-600 text-sm">
+            <span>👨‍🏫 Instructor: {c.author}</span>
+            <span>🌐 {c.category}</span>
+            <span>📅 April 04, 2022</span>
+            <span>⭐ {c.rating} (88)</span>
+          </div>
+
+          {/* TABS */}
+          <div className="border-b mt-10 flex">
+            {["Overview", "Curriculum", "Instructor", "Reviews"].map((t) => (
+              <button
+                key={t}
+                className={`px-6 py-3 font-semibold text-sm border-b-2 
+                  ${t === "Overview"
+                    ? "border-teal-600 text-teal-600"
+                    : "border-transparent text-gray-500 hover:text-teal-600"
+                  }`}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+
+          {/* CONTENT AREA */}
+          <div className="mt-8 text-gray-600 leading-relaxed space-y-7">
+
+            {/* Static Description */}
+            <div>
+              <h2 className="text-xl font-semibold mb-3">Description</h2>
+
+              <p>
+                Rapidiously develop parallel e-markets via worldwide paradigms. 
+                Quickly synergize cutting-edge scenarios and professional results. 
+                Assertively deliver cross-media results before client-centric outcomes.
+              </p>
+
+              <p className="mt-3">
+                Energetically reinvent distinctive value via parallel services extensive paradigms. 
+                Rapidiously administrate 2.0 total linkage for cross-platform channels.
+              </p>
+            </div>
+
+            {/* Static Learning Section */}
+            <div>
+              <h2 className="text-xl font-semibold mb-3">What Will You Learn?</h2>
+              <p>
+                Quickly synergize cutting-edge scenarios and professional results. 
+                Assertively deliver cross-media results before client-centric outcomes. 
+                Initiate intuitive communities via distinctive services.
+              </p>
+            </div>
+
+          </div>
+
         </div>
 
-        {/* Course Details */}
-        <div className="md:w-2/3">
-          <h1 className="text-3xl font-bold mb-4">{course.title}</h1>
-          <p className="text-gray-600 mb-2">
-            <strong>Category:</strong> {course.category}
-          </p>
-          <p className="text-gray-600 mb-2">
-            <strong>Instructor:</strong> {course.instructor}
-          </p>
-          <p className="text-gray-600 mb-2">
-            <strong>Lessons:</strong> {course.lessons}
-          </p>
-          <p className="text-gray-600 mb-2">
-            <strong>Students:</strong> {course.students}
-          </p>
-          <p className="text-gray-600 mb-2">
-            <strong>Views:</strong> {course.views}
-          </p>
-          <p className="text-gray-600 mb-2">
-            <strong>Rating:</strong> {course.rating} ⭐
-          </p>
-          <p className="text-gray-600 mb-2">
-            <strong>Price:</strong> ${course.price}
-          </p>
-          <p className="text-gray-600 mb-2">
-            <strong>Tag:</strong> {course.tag}
-          </p>
+        {/* RIGHT SIDEBAR */}
+        <div className="space-y-8">
+
+          {/* PRICE CARD */}
+          <div className="border rounded-xl shadow p-6 border-gray-200 top-24">
+            <h2 className="text-3xl font-bold">{c.price}</h2>
+            <p className="text-green-600 font-semibold text-sm mt-1">25% Off</p>
+
+            <button className="w-full bg-teal-600 text-white py-3 rounded-lg mt-6 hover:bg-teal-700 transition">
+              Add to Cart
+            </button>
+
+            <button className="w-full border  border-teal-600 text-teal-600 py-3 rounded-lg mt-3 hover:bg-teal-50 transition">
+              Buy Now
+            </button>
+          </div>
+
+          {/* COURSE INFO (Dynamic + Static Mix) */}
+          <div className="border border-gray-200 rounded-xl shadow p-6 space-y-4 text-gray-700 text-sm">
+
+            <div className="flex justify-between bg-gray-100 rounded-md p-3 ">
+              <span>Instructor:</span>
+              <span className="font-medium">{c.author}</span>
+            </div>
+
+            <div className="flex justify-between bg-gray-100 rounded-md p-3">
+              <span>Lessons:</span>
+              <span className="font-medium">{c.lessons}</span>
+            </div>
+
+            <div className="flex justify-between bg-gray-100 rounded-md p-3">
+              <span>Students:</span>
+              <span className="font-medium">{c.students}</span>
+            </div>
+
+            <div className="flex justify-between bg-gray-100 rounded-md p-3">
+              <span>Views:</span>
+              <span className="font-medium">{c.views}</span>
+            </div>
+
+            <div className="flex justify-between bg-gray-100 rounded-md p-3">
+              <span>Duration:</span>
+              <span className="font-medium">15h 30m</span>
+            </div>
+
+            <div className="flex justify-between bg-gray-100 rounded-md p-3">
+              <span>Level:</span>
+              <span className="font-medium">Beginner</span>
+            </div>
+
+            <div className="flex justify-between bg-gray-100 rounded-md p-3">
+              <span>Language:</span>
+              <span className="font-medium">English</span>
+            </div>
+
+            <div className="flex justify-between bg-gray-100 rounded-md p-3">
+              <span>Quizzes:</span>
+              <span className="font-medium">04</span>
+            </div>
+
+            <button className="w-full bg-teal-100 text-teal-700 py-2 rounded-lg mt-4 hover:bg-teal-200 transition">
+              Share This Course
+            </button>
+
+          </div>
+
         </div>
+
       </div>
     </div>
   );
