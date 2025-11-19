@@ -76,7 +76,7 @@ export default function Header() {
         </div>
 
         {/* CENTER — SEARCH (HIDDEN ON MOBILE) */}
-        <div className="hidden md:flex flex-grow max-w-[600px] w-full mx-6">
+        <div className="hidden lg:block md:flex flex-grow max-w-[600px] w-full mx-6">
           <div className="bg-[#f4f7f9] rounded-full flex items-center pl-5 py-1 gap-4 w-full">
             <select className="bg-transparent outline-none text-gray-600">
               <option>Categories</option>
@@ -125,7 +125,7 @@ export default function Header() {
       </div>
 
       {/* MOBILE SEARCH BAR */}
-      <div className="md:hidden px-6 pb-3">
+      <div className="md:hidden px-6 pb-3 hidden">
         <div className="bg-[#f4f7f9] rounded-full flex items-center pl-5 py-2 gap-3">
           <input
             type="text"
