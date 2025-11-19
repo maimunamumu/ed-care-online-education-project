@@ -24,7 +24,7 @@ export default function Dashboard() {
     ];
 
     return (
-        <div className="container mx-auto py-16 px-4 lg:px-12 flex flex-col lg:flex-row items-center gap-10">
+        <div className="container mx-auto py-16 px-4 lg:px-12 flex flex-col lg:flex-row items-center gap-10 lg:mt-10">
 
             {/* IMAGE SIDE */}
             <div className="w-full lg:w-1/2 flex justify-center relative">

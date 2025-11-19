@@ -30,7 +30,7 @@ const FeaturesCourses = () => {
         : courses;
 
     return (
-        <div className="bg-[#F2F4F7] py-12">
+        <div className="bg-[#F2F4F7] py-16">
             <div className="container mx-auto px-4 lg:px-12">
 
                 {/* Title */}

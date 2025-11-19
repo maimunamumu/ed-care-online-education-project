@@ -20,14 +20,14 @@ const Explore=() =>{
   ];
 
   return (
-    <section className="bg-[#172B2E] py-13 ">
+    <section className="bg-[#172B2E] py-13">
         <div className="text-center my-7">
-             <button className="bg-white text-sm text-gray-500  px-4 py-2 rounded-full mb-6 ">
+             <button className="bg-white text-sm text-gray-500  px-6 py-3 rounded-full mb-6 ">
                        Why Choose Us
                     </button>
                     <h1 className="text-white font-bold text-3xl ">Explore Yourself All Over The World</h1>
         </div>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <div className="container lg:px-12 px-6 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
         {steps.map((item, i) => (
           <div key={i} className="flex flex-col items-center  text-white px-6">
              <Image
