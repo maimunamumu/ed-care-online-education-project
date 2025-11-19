@@ -1,19 +1,31 @@
-// app/courses/[id]/page.js
+"use client";
 import Image from "next/image";
-import React from "react";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
-const Page = async ({ params }) => {
-  const { id } =await params;
+const Page = () => {
+  const { id } = useParams();
+  const [courses, setCourses] = useState([]);
 
-  const res = await fetch("http://localhost:3000/courses.json");
-  const courses = await res.json();
+  useEffect(() => {
+    fetch("/data/courses.json")
+      .then((res) => res.json())
+      .then((data) => setCourses(data));
+  }, []);
 
-  const course = courses.find(c => c.id === parseInt(id));
+  const course = courses.find((c) => c.id == id);
 
-  
+  // ⛔ FIX: course still loading
+  if (!course) {
+    return (
+      <div className="container mx-auto px-12 py-20">
+        <p className="text-xl font-semibold">Loading course...</p>
+      </div>
+    );
+  }
 
   return (
-      <div className="container mx-auto px-12 py-20">
+    <div className="container mx-auto px-12 py-20">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Image */}
         <div className="md:w-1/3">
@@ -21,7 +33,7 @@ const Page = async ({ params }) => {
             src={course.image}
             alt={course.title}
             className="rounded-lg shadow-md"
-              width={400} 
+            width={400}
             height={300}
           />
         </div>

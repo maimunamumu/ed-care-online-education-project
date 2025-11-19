@@ -22,7 +22,7 @@ export default function Dashboard() {
     ];
 
     return (
-        <div className="container mx-auto py-16 px-4 lg:px-20 flex flex-col lg:flex-row items-center gap-10">
+        <div className="container mx-auto py-16 px-4 lg:px-12 flex flex-col lg:flex-row items-center gap-10">
 
             {/* IMAGE SIDE */}
             <div className="w-full lg:w-1/2 flex justify-center relative">
@@ -36,7 +36,7 @@ export default function Dashboard() {
                 />
 
                 {/* Floating Students Box */}
-                <div className="hidden lg:block absolute bottom-8 right-10 bg-white shadow-md p-4 rounded-lg border w-44">
+                <div className="hidden lg:block absolute bottom-40 left-4 bg-white shadow-md px-6 py-4 rounded-lg  w-44">
                     <p className="text-gray-600 text-sm">Total Students</p>
                     <div className="flex -space-x-2 mt-2">
                         <Image src="/assets/faq-thumb-1.png" width={35} height={35} className="rounded-full border" alt="" />

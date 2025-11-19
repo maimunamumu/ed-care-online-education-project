@@ -11,8 +11,8 @@ const instructors = [
 
 export default function Instructors() {
   return (
-    <div className="py-20 bg-gradient-to-r from-blue-50 to-blue-50">
-      <div className="max-w-6xl mx-auto text-center px-4">
+    <div className="py-20 bg-gradient-to-r from-blue-50 to-blue-50 ">
+      <div className="container px-12 mx-auto text-center ">
 
         {/* Heading */}
         <span className="bg-teal-100 px-4 py-2 rounded-full text-sm inline-block">

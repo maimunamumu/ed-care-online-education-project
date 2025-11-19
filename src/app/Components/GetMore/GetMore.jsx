@@ -17,7 +17,7 @@ const GetMore = () => {
 
   return (
     <section className="w-full py-16 bg-white">
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT IMAGES */}
         <div className="relative flex justify-center md:justify-start" data-aos="fade-right">

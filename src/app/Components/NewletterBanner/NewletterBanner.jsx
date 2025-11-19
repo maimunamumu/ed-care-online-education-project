@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function NewletterBanner() {
   return (
-    <div className="bg-gray-900 py-20 text-white mt-20">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4">
+    <div className="bg-gray-900 py-30 text-white mt-20">
+      <div className="container px-12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center ">
 
         {/* IMAGE SECTION (Responsive) */}
         <div className="flex justify-center md:justify-start">
@@ -12,7 +12,7 @@ export default function NewletterBanner() {
             width={500}
             height={300}
             alt="Newsletter Banner"
-            className="w-full max-w-lg h-auto rounded-xl object-cover"
+            className="w-full  h-full rounded-xl object-cover"
           />
         </div>
 

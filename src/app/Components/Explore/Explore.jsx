@@ -20,7 +20,7 @@ const Explore=() =>{
   ];
 
   return (
-    <section className="bg-[#172B2E] py-13">
+    <section className="bg-[#172B2E] py-13 ">
         <div className="text-center my-7">
              <button className="bg-white text-sm text-gray-500  px-4 py-2 rounded-full mb-6 ">
                        Why Choose Us

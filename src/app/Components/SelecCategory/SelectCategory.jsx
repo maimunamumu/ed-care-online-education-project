@@ -15,7 +15,7 @@ const SelectCategory = () => {
 
   return (
     <div className="bg-[#F2F4F7] py-14">
-      <div className="container mx-auto px-6 md:px-20">
+      <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-10">
           <span className="px-4 py-2 bg-white text-gray-500 shadow rounded-full text-sm">
             Our Course Categories
