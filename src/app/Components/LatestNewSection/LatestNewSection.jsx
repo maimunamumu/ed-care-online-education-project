@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { Calendar, Tag } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function LatestNewsSection() {
   return (
@@ -16,8 +18,15 @@ export default function LatestNewsSection() {
 
       {/* Cards Section */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6">
+
         {/* Card 1 */}
-        <div className="relative rounded-2xl overflow-hidden shadow-md group cursor-pointer">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="relative rounded-2xl overflow-hidden shadow-md group cursor-pointer"
+        >
           <Image
             src="/assets/post-1.jpg"
             alt="News Image 1"
@@ -38,14 +47,20 @@ export default function LatestNewsSection() {
             </h3>
 
             <div className="flex items-center gap-4 mt-4 text-sm opacity-90">
-              <span className="flex items-center gap-1"><Calendar size={16}/> August 15, 2025</span>
-              <span className="flex items-center gap-1"><Tag size={16}/> Marketing</span>
+              <span className="flex items-center gap-1"><Calendar size={16} /> August 15, 2025</span>
+              <span className="flex items-center gap-1"><Tag size={16} /> Marketing</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Card 2 */}
-        <div className="relative rounded-2xl overflow-hidden shadow-md group cursor-pointer">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="relative rounded-2xl overflow-hidden shadow-md group cursor-pointer"
+        >
           <Image
             src="/assets/post-2.png"
             alt="News Image 2"
@@ -66,11 +81,11 @@ export default function LatestNewsSection() {
             </h3>
 
             <div className="flex items-center gap-4 mt-4 text-sm opacity-90">
-              <span className="flex items-center gap-1"><Calendar size={16}/> August 15, 2025</span>
-              <span className="flex items-center gap-1"><Tag size={16}/> Marketing</span>
+              <span className="flex items-center gap-1"><Calendar size={16} /> August 15, 2025</span>
+              <span className="flex items-center gap-1"><Tag size={16} /> Marketing</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

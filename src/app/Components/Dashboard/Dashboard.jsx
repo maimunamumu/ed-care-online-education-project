@@ -3,13 +3,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const MotionImage = motion(Image);
+
 export default function Dashboard() {
     const [open, setOpen] = useState(0);
 
     const faq = [
         {
             q: "What courses do you offer?",
-            a: "We offer a wide range of courses in various subjects, including science, technology, engineering, mathematics, humanities, and social sciences.",
+            a: "We offer a wide range of courses in science, technology, engineering, mathematics, humanities, and social sciences.",
         },
         {
             q: "How can teachers effectively manage a diverse classroom?",
@@ -26,28 +28,43 @@ export default function Dashboard() {
 
             {/* IMAGE SIDE */}
             <div className="w-full lg:w-1/2 flex justify-center relative">
-                <motion.img
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                <MotionImage
                     src="/assets/faq-img.png"
                     alt="Dashboard Preview"
+                    width={500}
+                    height={500}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
                     className="rounded-xl shadow-lg w-full max-w-md lg:max-w-lg"
                 />
 
                 {/* Floating Students Box */}
-                <div className="hidden lg:block absolute bottom-40 left-4 bg-white shadow-md px-6 py-4 rounded-lg  w-44">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                    className="hidden lg:block absolute bottom-36 left-6 bg-white shadow-md px-6 py-4 rounded-lg w-44"
+                >
                     <p className="text-gray-600 text-sm">Total Students</p>
+
                     <div className="flex -space-x-2 mt-2">
-                        <Image src="/assets/faq-thumb-1.png" width={35} height={35} className="rounded-full border" alt="" />
-                        <Image src="/assets/faq-thumb-2.png" width={35} height={35} className="rounded-full border" alt="" />
-                        <Image src="/assets/faq-thumb-3.png" width={35} height={35} className="rounded-full border" alt="" />
-                        <Image src="/assets/faq-thumb-4.png" width={35} height={35} className="rounded-full border" alt="" />
+                        {["1","2","3","4"].map((n) => (
+                            <Image
+                                key={n}
+                                src={`/assets/faq-thumb-${n}.png`}
+                                width={35}
+                                height={35}
+                                className="rounded-full border object-cover"
+                                alt=""
+                            />
+                        ))}
                     </div>
-                </div>
+                </motion.div>
             </div>
 
-            {/* FAQ SECTION */}
+            {/* FAQ Section */}
             <div className="w-full lg:w-1/2">
                 <span className="text-sm bg-base-100 shadow-md px-4 py-2 rounded-full">
                     Most Asked Question
@@ -61,23 +78,27 @@ export default function Dashboard() {
                     {faq.map((item, i) => (
                         <div
                             key={i}
-                            className="border rounded-lg border-gray-300 p-4 cursor-pointer bg-white"
+                            className="border rounded-lg border-gray-300 p-4 cursor-pointer bg-white transition hover:shadow-md"
                             onClick={() => setOpen(open === i ? null : i)}
                         >
                             <div className="font-semibold flex justify-between text-base md:text-lg">
                                 {item.q}
-                                <span>{open === i ? "▲" : "▼"}</span>
+                                <motion.span
+                                    animate={{ rotate: open === i ? 180 : 0 }}
+                                    transition={{ duration: 0.25 }}
+                                >
+                                    ▼
+                                </motion.span>
                             </div>
 
-                            {open === i && (
-                                <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    className="mt-2 text-gray-600"
-                                >
-                                    {item.a}
-                                </motion.p>
-                            )}
+                            <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={open === i ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="overflow-hidden"
+                            >
+                                <p className="mt-2 text-gray-600">{item.a}</p>
+                            </motion.div>
                         </div>
                     ))}
                 </div>

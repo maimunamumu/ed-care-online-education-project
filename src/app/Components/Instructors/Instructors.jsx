@@ -29,8 +29,9 @@ export default function Instructors() {
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.6 }}
               className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4 cursor-pointer"
             >
               {/* Image */}
