@@ -56,7 +56,7 @@
     "instructor": "Sophia Miller",
     "authorName": "Sophia Miller",
     "authorImage": "/assets/courseImg/course-author-4.png",
-    "image": "/assets/course-author-4.png",
+    "image": "/assets/course-img-4.png",
     "tag": "Free"
   },
   {
@@ -71,7 +71,7 @@
     "instructor": "Michael Adams",
     "authorName": "Michael Adams",
     "authorImage": "/assets/courseImg/course-author-5.png",
-    "image": "/assets/course-author-5.png",
+    "image": "/assets/course-img-5.png",
     "tag": "Free"
   },
   {
@@ -86,7 +86,7 @@
     "instructor": "Emma Johnson",
     "authorName": "Emma Johnson",
     "authorImage": "/assets/courseImg/course-author-6.png",
-    "image": "/assets/course-author-6.png",
+    "image": "/assets/course-img-6.png",
     "tag": "Free"
   }
 ]
