@@ -16,8 +16,10 @@ import Link from "next/link";
 import { BiSolidCategory } from "react-icons/bi";
 import { usePathname } from "next/navigation";
 import { FaBehance, FaFacebook, FaInstagram } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 export default function Header() {
+  const cart =useSelector((state)=>state.cart.items)
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -103,12 +105,12 @@ export default function Header() {
             </span>
           </div>
 
-          <div className="relative">
+         <Link href="/cartPage"> <div className="relative">
             <ShoppingCart size={22} className="text-gray-700" />
             <span className="absolute -top-2 -right-2 bg-teal-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-              0
+              {cart.length}
             </span>
-          </div>
+          </div></Link>
 
           <button className="hidden md:block bg-teal-600 text-white px-6 py-2 rounded-full font-medium">
             Start Free Trial

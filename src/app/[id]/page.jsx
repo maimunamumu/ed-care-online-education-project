@@ -2,10 +2,13 @@
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { cart } from "../Redux/CartSlice"; 
 
 const Page = () => {
   const { id } = useParams();
   const [courses, setCourses] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch("/data/courses.json")
@@ -15,7 +18,6 @@ const Page = () => {
 
   const c = courses.find((c) => c.id == id);
 
-  // ⛔ FIX: course still loading
   if (!c) {
     return (
       <div className="container mx-auto px-12 py-20">
@@ -24,14 +26,15 @@ const Page = () => {
     );
   }
 
+  const handleAddToCart = () => {
+    dispatch(cart(c));
+  };
+
   return (
-   <div className="container mx-auto px-5 lg:px-20 py-14">
-
+    <div className="container mx-auto px-5 lg:px-20 py-14">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-
         {/* LEFT COLUMN */}
         <div className="lg:col-span-2 border border-gray-200 p-5 rounded-lg">
-
           {/* IMAGE */}
           <div className="rounded-xl overflow-hidden shadow">
             <Image
@@ -69,11 +72,11 @@ const Page = () => {
             {["Overview", "Curriculum", "Instructor", "Reviews"].map((t) => (
               <button
                 key={t}
-                className={`px-6 py-3 font-semibold text-sm border-b-2 
-                  ${t === "Overview"
+                className={`px-6 py-3 font-semibold text-sm border-b-2 ${
+                  t === "Overview"
                     ? "border-teal-600 text-teal-600"
                     : "border-transparent text-gray-500 hover:text-teal-600"
-                  }`}
+                }`}
               >
                 {t}
               </button>
@@ -82,24 +85,19 @@ const Page = () => {
 
           {/* CONTENT AREA */}
           <div className="mt-8 text-gray-600 leading-relaxed space-y-7">
-
-            {/* Static Description */}
             <div>
               <h2 className="text-xl font-semibold mb-3">Description</h2>
-
               <p>
                 Rapidiously develop parallel e-markets via worldwide paradigms. 
                 Quickly synergize cutting-edge scenarios and professional results. 
                 Assertively deliver cross-media results before client-centric outcomes.
               </p>
-
               <p className="mt-3">
                 Energetically reinvent distinctive value via parallel services extensive paradigms. 
                 Rapidiously administrate 2.0 total linkage for cross-platform channels.
               </p>
             </div>
 
-            {/* Static Learning Section */}
             <div>
               <h2 className="text-xl font-semibold mb-3">What Will You Learn?</h2>
               <p>
@@ -108,79 +106,67 @@ const Page = () => {
                 Initiate intuitive communities via distinctive services.
               </p>
             </div>
-
           </div>
-
         </div>
 
         {/* RIGHT SIDEBAR */}
         <div className="space-y-8">
-
           {/* PRICE CARD */}
           <div className="border rounded-xl shadow p-6 border-gray-200 top-24">
             <h2 className="text-3xl font-bold">{c.price}</h2>
             <p className="text-green-600 font-semibold text-sm mt-1">25% Off</p>
 
-            <button className="w-full bg-teal-600 text-white py-3 rounded-lg mt-6 hover:bg-teal-700 transition">
+            <button
+              onClick={handleAddToCart}
+              className="w-full bg-teal-600 text-white py-3 rounded-lg mt-6 hover:bg-teal-700 transition"
+            >
               Add to Cart
             </button>
 
-            <button className="w-full border  border-teal-600 text-teal-600 py-3 rounded-lg mt-3 hover:bg-teal-50 transition">
+            <button className="w-full border border-teal-600 text-teal-600 py-3 rounded-lg mt-3 hover:bg-teal-50 transition">
               Buy Now
             </button>
           </div>
 
-          {/* COURSE INFO (Dynamic + Static Mix) */}
+          {/* COURSE INFO */}
           <div className="border border-gray-200 rounded-xl shadow p-6 space-y-4 text-gray-700 text-sm">
-
             <div className="flex justify-between bg-gray-100 rounded-md p-3 ">
               <span>Instructor:</span>
               <span className="font-medium">{c.author}</span>
             </div>
-
             <div className="flex justify-between bg-gray-100 rounded-md p-3">
               <span>Lessons:</span>
               <span className="font-medium">{c.lessons}</span>
             </div>
-
             <div className="flex justify-between bg-gray-100 rounded-md p-3">
               <span>Students:</span>
               <span className="font-medium">{c.students}</span>
             </div>
-
             <div className="flex justify-between bg-gray-100 rounded-md p-3">
               <span>Views:</span>
               <span className="font-medium">{c.views}</span>
             </div>
-
             <div className="flex justify-between bg-gray-100 rounded-md p-3">
               <span>Duration:</span>
               <span className="font-medium">15h 30m</span>
             </div>
-
             <div className="flex justify-between bg-gray-100 rounded-md p-3">
               <span>Level:</span>
               <span className="font-medium">Beginner</span>
             </div>
-
             <div className="flex justify-between bg-gray-100 rounded-md p-3">
               <span>Language:</span>
               <span className="font-medium">English</span>
             </div>
-
             <div className="flex justify-between bg-gray-100 rounded-md p-3">
               <span>Quizzes:</span>
               <span className="font-medium">04</span>
             </div>
-
             <button className="w-full bg-teal-100 text-teal-700 py-2 rounded-lg mt-4 hover:bg-teal-200 transition">
               Share This Course
             </button>
-
           </div>
-
         </div>
-
       </div>
     </div>
   );

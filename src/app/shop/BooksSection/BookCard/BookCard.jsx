@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import {cart} from "../../../Redux/CartSlice"
 
 export default function BookCard({ book }) {
+  const dispatch =useDispatch()
   return (
     <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition">
 
@@ -33,6 +36,7 @@ export default function BookCard({ book }) {
         <p className="text-gray-400 line-through text-sm">${book.oldPrice}</p>
         <p className="text-[#00A95C] text-lg font-semibold">${book.newPrice}</p>
       </div>
+      <button className="px-4 py-2 border" onClick={()=>dispatch(cart(book))}>Add To Cart</button>
 
     </div>
   );
